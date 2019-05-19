@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Input</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+<!--<div class="main-content">-->
+<!--  <div class="concept concept-eight">-->
+<!--    <h1 class="word">-->
+<!--      <div class="char" data-content="S">S</div>-->
+<!--      <div class="char" data-content="M">M</div>-->
+<!--      <div class="char" data-content="L">L</div>-->
+<!--      <div class="char" data-content="R">R</div>-->
+<!--    </h1>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<h1>Summarize the web easily with deep learning</h1>
+<h2>Enter a URL below to get started</h2>
+
+<div class="container">
+    <div class="container__item">
+
+        <form action="http://localhost:5000/result" method="POST">
+            <label>
+                <input type="text" name="Name" class="form__field" value="en.wikipedia.org/wiki/London"/>
+            </label>
+            <button class="btn btn--primary btn--inside uppercase">SUMMARIZE</button>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+
+

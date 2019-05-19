@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Summary {{ top_entities[0] }}</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">   <!--Prevent favicon errors-->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/btnout.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<h1>Summary for {{ top_entities[0] }}</h1>
+
+<div id="facts">
+    <ul>
+        <li>
+            <div class="fact"><p>{{ facts[0] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[1] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[2] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[3] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[4] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[5] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[6] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[7] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[8] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[9] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[10] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[11] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[12] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[13] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[14] }}</p></div>
+        </li>
+        <li>
+            <div class="fact"><p>{{ facts[15] }}</p></div>
+        </li>
+    </ul>
+</div>
+
+<h1>Related Terms</h1>
+
+<div id="entbtns">
+    <div class="box">
+        <a href="https://en.wikipedia.org/wiki/{{ top_entities[1] }}"
+           class="btn btn-white btn-animation-1">{{ top_entities[1] }}</a>
+    </div>
+
+    <div class="box">
+        <a href="https://en.wikipedia.org/wiki/{{ top_entities[2] }}"
+           class="btn btn-white btn-animation-1">{{ top_entities[2] }}</a>
+    </div>
+
+    <div class="box">
+        <a href="https://en.wikipedia.org/wiki/{{ top_entities[3] }}"
+           class="btn btn-white btn-animation-1">{{ top_entities[3] }}</a>
+    </div>
+</div>
+
+<h1>Visualization</h1>
+<div id="content">hi</div>
+
+<script>
+
+</script>
+
+
+</body>
+
+<script>
+    $('#content').load("/visualization")
+
+    var divs = document.querySelectorAll('div');
+    for (var i = 0; i < divs.length; i++) {
+        if (divs[i].innerText == "") {
+            divs[i].remove();
+        }
+    }
+</script>
+
+</html>

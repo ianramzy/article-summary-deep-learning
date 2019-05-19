@@ -1,0 +1,224 @@
+body {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(-45deg, rgba(238, 119, 82, 0.41), rgba(231, 60, 126, 0.4), rgba(35, 166, 213, 0.4), rgba(35, 213, 171, 0.41));
+    /*background: linear-gradient(-45deg, rgba(238, 119, 82, 1), rgba(231, 60, 126, 1), rgba(35, 166, 213, 1), rgba(35, 213, 171, 1));*/
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    padding: 0;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 70px;
+}
+
+
+h2 {
+    text-align: center;
+
+}
+
+#content {
+    background-color: rgba(255, 255, 255, 1);
+    /*background-color: rgba(255, 255, 255, 0.4);*/
+    color: black;
+    padding: 10px
+
+}
+
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+
+/*facts*/
+#facts {
+    margin-top: 50px;
+    align-items: center;
+}
+.fact {
+    width: 60%;
+    height: 50px;
+    background-color: white;
+    /*margin: 1px;*/
+    margin-left: 20%;
+    color: #000;
+    -webkit-animation: shadow-drop-2-center 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.640) forwards;
+	        animation: shadow-drop-2-center 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.640) forwards;
+}
+
+#facts ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+
+li:empty {
+   display: none;
+}
+ul:empty {
+   display: none;
+}
+div:empty {
+   display: none;
+}
+
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.fact p {
+    text-align: center;
+    padding-top: 13px;
+}
+
+/*facts*/
+
+
+
+
+/*text input*/
+:root {
+    background: #f5f6fa;
+    color: #9c9c9c;
+    font: 1rem "PT Sans", sans-serif;
+}
+
+html,
+body,
+.container {
+    /*height: 50%;*/
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+}
+
+a {
+    color: inherit;
+}
+a:hover {
+    color: #7f8ff4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+    /*position:absolute;*/
+}
+.btn--primary {
+    background: #7f8ff4;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+}
+.btn--primary:hover {
+    background: #6c7ff2;
+}
+.btn--primary:active {
+    background: #7f8ff4;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+.btn--inside {
+    margin-left: -96px;
+}
+
+.form__field {
+    width: 360px;
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    outline: 0;
+    padding: 22px 18px;
+}
+/*text input*/
