@@ -6,37 +6,10 @@ import spacy
 from spacy import displacy
 from collections import Counter
 import textacy.extract
-import webbrowser
 
-nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_sm')
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def student():
-    return render_template("input.html")
-
-@app.route('/visualization')
-def visualization():
-    return render_template("visualization.html")
-
-
-@app.route('/result', methods=['POST', 'GET'])
-def result():
-    if request.method == 'POST':
-        value = request.form.get('Name')
-        print("Recieved: " + value)
-        article = nlp(url_to_string(value))
-        top_entities = findNER(article)
-        facts = printFacts(top_entities, article)
-        renderPicture(article)
-        # visualization = renderPicture(article)
-        return render_template("output.html", top_entities=top_entities, facts=facts)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 
 def url_to_string(url):
@@ -62,7 +35,7 @@ def findNER(article):
     return top_entities
 
 
-def printFacts(top_entities,  article):
+def printFacts(top_entities, article):
     strStatements = []
     statements = textacy.extract.semistructured_statements(article, top_entities[0])
     print("Here are the things I know about " + top_entities[0] + ": ")
@@ -74,16 +47,32 @@ def printFacts(top_entities,  article):
     print(strStatements)
     return strStatements
 
+
 def renderPicture(article):
     colors = {"ORG": "linear-gradient(90deg, #aa9cfc, #fc9ce7)"}
     options = {"ents": ["ORG", "PERSON", "NORP", "FAC", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART"],
                "bg": "#white", "color": "black", "font": "Montserrat"}
-
-    # displacy.render(article, jupyter=False, style='ent', options=options)
-    f = open("templates/visualization.html", "w")
-    f.write(displacy.render(article, style="ent", page=True, options=options))
-    f.close()
+    return displacy.render(article, style="ent", page=True, options=options)
 
 
+@app.route('/')
+def student():
+    return render_template("input.html")
 
 
+@app.route('/result', methods=['POST', 'GET'])
+def result():
+    if request.method == 'POST':
+        value = request.form.get('Name')
+        print("Recieved: " + value)
+        article = nlp(url_to_string(value))
+        top_entities = findNER(article)
+        facts = printFacts(top_entities, article)
+        renderPicture(article)
+        visualization = renderPicture(article)
+
+        return render_template("output.html", top_entities=top_entities, facts=facts, visualization=visualization)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

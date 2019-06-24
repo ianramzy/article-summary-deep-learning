@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
-
+<body style="padding: 0">
 <h1>Summary for {{ top_entities[0] }}</h1>
 
 <div id="facts">
@@ -84,24 +84,6 @@
 </div>
 
 <h1>Visualization</h1>
-<div id="content">hi</div>
-
-<script>
-
-</script>
-
-
+<div id="content">{{ visualization | safe }}</div>
 </body>
-
-<script>
-    $('#content').load("/visualization")
-
-    var divs = document.querySelectorAll('div');
-    for (var i = 0; i < divs.length; i++) {
-        if (divs[i].innerText == "") {
-            divs[i].remove();
-        }
-    }
-</script>
-
 </html>
