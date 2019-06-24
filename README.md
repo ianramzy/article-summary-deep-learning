@@ -1,4 +1,4 @@
-# article-summary-deep-learning
+# Article Summary Deep Learning
 [![Author](https://img.shields.io/badge/Author-ianramzy-brightgreen.svg)](https://ianramzy.com)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-brightgreen.svg)](https://paypal.me/ianramzy)
